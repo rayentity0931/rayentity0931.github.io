@@ -1,0 +1,39 @@
+body{
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.search-bar {
+  font-size: 20px;
+  display: block;
+}
+
+.idol-img {
+  width: 100%;
+}
+
+.name {
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.series {
+  font-size: 20px;
+  color: rgb(166, 163, 163);
+}
+
+.text-grid {
+  display: grid;
+  grid-template-rows: 10px;
+  margin-top: 7px;
+}
+
+.picture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 40px;
+}

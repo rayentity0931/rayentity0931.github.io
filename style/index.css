@@ -1,0 +1,92 @@
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+body{
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 100px;
+  row-gap: 50px;
+}
+
+.Youtube {
+  background-color: rgb(177, 13, 46);
+  color:aliceblue;
+  border: none;
+  height: 36px;
+  width: 105px;
+  border-radius: 2px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.Facebook {
+  background-color: rgb(35, 111, 182);
+  color:aliceblue;
+  border: none;
+  height: 36px;
+  width: 105px;
+  border-radius: 2px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.Instergram {
+  background-color: rgb(252, 57, 219);
+  color:aliceblue;
+  border: none;
+  height: 36px;
+  width: 105px;
+  border-radius: 2px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.Discord {
+  background-color: rgb(63, 65, 173);
+  color:aliceblue;
+  border: none;
+  height: 36px;
+  width: 105px;
+  border-radius: 2px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.Github {
+  background-color: rgb(224, 227, 230);
+  color:rgb(2, 5, 7);
+  border: none;
+  height: 36px;
+  width: 105px;
+  border-radius: 2px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.Chess {
+  background-color: rgb(20, 97, 13);
+  color:rgb(255, 255, 255);
+  border: none;
+  height: 36px;
+  width: 105px;
+  border-radius: 2px;
+  position: fixed;
+  cursor: pointer;
+}
+
+.artical-grid {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 225px 225px 225px;
+  row-gap: 60px;
+  column-gap: 60px;
+  margin-top: -200px;
+  margin-left: 200px;
+}
