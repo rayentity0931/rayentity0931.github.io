@@ -1,0 +1,50 @@
+h1 {
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+}
+
+#songInput {
+  width: 30%;
+  font-size: 20px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid gray;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1600px;
+  border: 1px solid gray;
+  font-size: 30px;
+  text-align: center;
+}
+
+#myTable th {
+  background-color: brown;
+  color: white;
+}
+
+#myTable td {
+  padding: 8px;
+}
+
+#myTable tr:hover {
+  background-color: rgb(35, 35, 35);
+  color: rgb(225, 224, 224);
+  transition: 0.8s;
+}
+
+.Youtube {
+  background-color: rgb(177, 13, 46);
+  color:aliceblue;
+  border: none;
+  border-radius: 2px;
+  font-size: 30px;
+  cursor: pointer;
+}

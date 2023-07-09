@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歌曲搜尋</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="style/song.css">
+</head>
+<body>
+  <h1>歌曲搜尋</h1>
+  <form action="" class="search">
+    <input type="text" id="songInput" placeholder="搜尋...">
+  </form>
+
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th style="width:400px">連結</th>
+        <th style="width:350px">名稱</th>
+        <th style="width:350px">作者</th>
+        <th style="width:150px">語言</th>
+        <th style="width:350px">系列</th>
+      </tr>
+    </thead>
+
+    <tbody id="myBody">
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/watch?v=83RUhxsfLWs" target="_blank">
+            <button class="Youtube">Youtube</button>
+          </a>
+        </td>
+        <td>Greatful</td>
+        <td>Neffex</td>
+        <td>English</td>
+        <td>ncs</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/watch?v=_MTbjHKtobY" target="_blank">
+            <button class="Youtube">Youtube</button>
+          </a>
+        </td>
+        <td>Crown</td>
+        <td>Neffex</td>
+        <td>English</td>
+        <td>ncs</td>
+      </tr>
+      <tr>
+        <td>
+          <a href="https://www.youtube.com/watch?v=t9y9TtMVJkk" target="_blank">
+            <button class="Youtube">Youtube</button>
+          </a>
+        </td>
+        <td>Revolution</td>
+        <td>Neffex</td>
+        <td>English</td>
+        <td>ncs</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+        $("#songInput").on("keyup", function() {
+
+          let value = $(this).val().toLowerCase();
+        
+        $("#myBody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+  </script>
+  
+</body>
+</html>
