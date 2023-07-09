@@ -8,7 +8,7 @@ h1 {
 
 #songInput {
   width: 30%;
-  font-size: 20px;
+  font-size: 30px;
   padding: 10px;
   background-color: white;
   border: 1px solid gray;
@@ -47,4 +47,26 @@ h1 {
   border-radius: 2px;
   font-size: 30px;
   cursor: pointer;
+}
+
+#category {
+  font-size: 20px;
+  background-color: rgb(234, 236, 238);
+}
+
+#link1,
+#link2,
+#link3,
+#link4,
+#link5 {
+  font-size: 20px;
+}
+
+.add {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.rightButton {
+  font-size: 20px;
 }

@@ -12,22 +12,35 @@
   <form action="" class="search">
     <input type="text" id="songInput" placeholder="搜尋...">
 
-    <select id="category" class="form-select mt-3 mb-3 shadows-sm">
+    <select id="category">
       <option value="0" selected hidden>選擇類別</option>
       <option value="1">連結</option>
       <option value="2">名稱</option>
-      <option value="3">作者</option>
+      <option value="3">創作者</option>
       <option value="4">語言</option>
       <option value="5">系列</option>
     </select>
   </form>
+
+  <div class="add">
+    <input type="text" name="name1" id="link1" placeholder="輸入連結">
+    <input type="text" name="name2" id="link2" placeholder="輸入名稱">
+    <input type="text" name="name3" id="link3" placeholder="輸入創作者">
+    <input type="text" name="name4" id="link4" placeholder="輸入語言">
+    <input type="text" name="name5" id="link5" placeholder="輸入系列">
+    <button class="rightButton" onclick="addSongList()">add</button>
+    <button class="rightButton" onclick="editSongList()">edit</button>
+    <button class="rightButton" onclick="deleteSongList()">delete</button>
+  </div>
+
+  
 
   <table id="myTable">
     <thead>
       <tr>
         <th style="width:400px">連結</th>
         <th style="width:350px">名稱</th>
-        <th style="width:350px">作者</th>
+        <th style="width:350px">創作者</th>
         <th style="width:150px">語言</th>
         <th style="width:350px">系列</th>
       </tr>
@@ -71,6 +84,9 @@
   </table>
 
   <script>
+
+    let rIndex, table = document.getElementById("myTable");
+
     /*
     $(document).ready(function() {
         $("#songInput").on("keyup", function() {
@@ -114,6 +130,81 @@
 
     songInput.addEventListener('input', Search);
     category.addEventListener('change', Search);
+
+    //
+    
+    function addSongList() {
+      let newRow = table.insertRow(table.length),
+        cell1 = newRow.insertCell(0),
+        cell2 = newRow.insertCell(1),
+        cell3 = newRow.insertCell(2),
+        cell4 = newRow.insertCell(3),
+        cell5 = newRow.insertCell(4),
+        name1 = document.getElementById("link1").value,
+        name2 = document.getElementById("link2").value,
+        name3 = document.getElementById("link3").value,
+        name4 = document.getElementById("link4").value,
+        name5 = document.getElementById("link5").value;
+
+      cell1.innerHTML = name1;
+      cell2.innerHTML = name2;
+      cell3.innerHTML = name3;
+      cell4.innerHTML = name4;
+      cell5.innerHTML = name5;
+
+      document.getElementById("link1").value = "";
+      document.getElementById("link2").value = "";
+      document.getElementById("link3").value = "";
+      document.getElementById("link4").value = "";
+      document.getElementById("link5").value = "";
+
+      selectedRowToInput();
+    }
+    
+
+    function selectedRowToInput() {
+      for (let i = 1; i < table.rows.length; i++) {
+        table.rows[i].onclick = function() {
+          rIndex = this.rowIndex;
+          document.getElementById("link1").value = this.cells[0].innerHTML;
+          document.getElementById("link2").value = this.cells[1].innerHTML;
+          document.getElementById("link3").value = this.cells[2].innerHTML;
+          document.getElementById("link4").value = this.cells[3].innerHTML;
+          document.getElementById("link5").value = this.cells[4].innerHTML;
+        };
+      }
+    }
+    selectedRowToInput();
+
+    function editSongList() {
+      let link1 = document.getElementById("link1").value,
+          link2 = document.getElementById("link2").value,
+          link3 = document.getElementById("link3").value,
+          link4 = document.getElementById("link4").value,
+          link5 = document.getElementById("link5").value
+
+      table.rows[rIndex].cells[0].innerHTML = link1;
+      table.rows[rIndex].cells[1].innerHTML = link2;
+      table.rows[rIndex].cells[2].innerHTML = link3;
+      table.rows[rIndex].cells[3].innerHTML = link4;
+      table.rows[rIndex].cells[4].innerHTML = link5;
+
+      document.getElementById("link1").value = "";
+      document.getElementById("link2").value = "";
+      document.getElementById("link3").value = "";
+      document.getElementById("link4").value = "";
+      document.getElementById("link5").value = "";
+    }
+
+    function deleteSongList() {
+      table.deleteRow(rIndex);
+
+      document.getElementById("link1").value = "";
+      document.getElementById("link2").value = "";
+      document.getElementById("link3").value = "";
+      document.getElementById("link4").value = "";
+      document.getElementById("link5").value = "";
+    }
   </script>
 </body>
 </html>
