@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>歌曲搜尋</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="script/song.js"></script>
   <link rel="stylesheet" href="style/song.css">
 </head>
 <body>
@@ -23,19 +24,20 @@
   </form>
 
   <div class="add">
-    <input type="text" name="name1" id="link1" placeholder="輸入連結">
-    <input type="text" name="name2" id="link2" placeholder="輸入名稱">
-    <input type="text" name="name3" id="link3" placeholder="輸入創作者">
-    <input type="text" name="name4" id="link4" placeholder="輸入語言">
-    <input type="text" name="name5" id="link5" placeholder="輸入系列">
+    <input type="text" name="name1" class="form-control" id="link1" placeholder="輸入連結">
+    <input type="text" name="name2" class="form-control" id="link2" placeholder="輸入名稱">
+    <input type="text" name="name3" class="form-control" id="link3" placeholder="輸入創作者">
+    <input type="text" name="name4" class="form-control" id="link4" placeholder="輸入語言">
+    <input type="text" name="name5" class="form-control" id="link5" placeholder="輸入系列">
     <button class="rightButton" onclick="addSongList()">add</button>
     <button class="rightButton" onclick="editSongList()">edit</button>
     <button class="rightButton" onclick="deleteSongList()">delete</button>
+    <button class="rightButton" id="save-button" onclick="saveSongList()">save</button>
   </div>
 
   
 
-  <table id="myTable">
+  <table id="myTable" class="myTable">
     <thead>
       <tr>
         <th style="width:400px">連結</th>
@@ -100,7 +102,6 @@
     });
     */
 
-    
     let songInput = document.getElementById('songInput')
     let category = document.getElementById('category')
     let tbody = document.getElementById('myBody')
@@ -131,8 +132,7 @@
     songInput.addEventListener('input', Search);
     category.addEventListener('change', Search);
 
-    //
-    
+    /*
     function addSongList() {
       let newRow = table.insertRow(table.length),
         cell1 = newRow.insertCell(0),
@@ -160,7 +160,6 @@
 
       selectedRowToInput();
     }
-    
 
     function selectedRowToInput() {
       for (let i = 1; i < table.rows.length; i++) {
@@ -196,6 +195,7 @@
       document.getElementById("link5").value = "";
     }
 
+
     function deleteSongList() {
       table.deleteRow(rIndex);
 
@@ -205,6 +205,7 @@
       document.getElementById("link4").value = "";
       document.getElementById("link5").value = "";
     }
+    */
   </script>
 </body>
 </html>
