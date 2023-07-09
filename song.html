@@ -11,6 +11,15 @@
   <h1>歌曲搜尋</h1>
   <form action="" class="search">
     <input type="text" id="songInput" placeholder="搜尋...">
+
+    <select id="category" class="form-select mt-3 mb-3 shadows-sm">
+      <option value="0" selected hidden>選擇類別</option>
+      <option value="1">連結</option>
+      <option value="2">名稱</option>
+      <option value="3">作者</option>
+      <option value="4">語言</option>
+      <option value="5">系列</option>
+    </select>
   </form>
 
   <table id="myTable">
@@ -62,6 +71,7 @@
   </table>
 
   <script>
+    /*
     $(document).ready(function() {
         $("#songInput").on("keyup", function() {
 
@@ -72,8 +82,38 @@
         });
       });
     });
+    */
 
+    
+    let songInput = document.getElementById('songInput')
+    let category = document.getElementById('category')
+    let tbody = document.getElementById('myBody')
+    let orignaltabledata = tbody.innerHTML;
+
+    function Search() {
+      tbody.innerHTML = orignaltabledata;
+      let rows = tbody.children;
+
+      if (songInput.value.length < 1 || category.value == '0') {
+        return;
+      }
+
+      let filteredrows = '';
+      let catno = Number(category.value) - 1;
+      let searchtext = songInput.value.toLowerCase();
+
+      for (let i = 0; i < rows.length; i++) {
+        const currentrowtext = rows[i].children[catno].innerText.toLowerCase();
+
+        if(currentrowtext.indexOf(searchtext) > -1) {
+          filteredrows += rows[i].outerHTML;
+        }
+      }
+      tbody.innerHTML = filteredrows;
+    }
+
+    songInput.addEventListener('input', Search);
+    category.addEventListener('change', Search);
   </script>
-  
 </body>
 </html>
